@@ -1,0 +1,40 @@
+baseurl = "https://reedflinch.io"
+title = "Stove"
+theme = "aerial"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+disableKinds = ["RSS"]
+
+[params]
+  name = "Steve Flinchbaugh"
+  about = "Software Engineer &nbsp;&bull;&nbsp; Brooklyn &nbsp;&bull;&nbsp; Wrangling sloths in The Cloud&trade;"
+  copyright = "2017 Steven Flinchbaugh"
+  bg_scroll = "false"
+  favicon = "favicon.ico"
+
+[[params.social]]
+  medium = "github"
+  icon = "github"
+  link = "https://github.com/reedflinch"
+
+[[params.social]]
+  medium = "twitter"
+  icon = "twitter"
+  link = "https://twitter.com/reedflinch"
+
+[[params.social]]
+  medium = "instagram"
+  icon = "instagram"
+  link = "https://www.instagram.com/reedflinch/"
+
+[[params.social]]
+  medium = "soccer"
+  icon = "futbol-o"
+  link = "http://www.wifcny.org/"
+
+[languages]
+[languages.en]
+languageName = "English"
+weight = 1
+title = "Steve Flinchbaugh"
