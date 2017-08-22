@@ -31,5 +31,3 @@ s3://reedflinch-io \
 --include "index.html" \
 --cache-control "no-cache" \
 --sse
-
-aws cloudfront create-invalidation
