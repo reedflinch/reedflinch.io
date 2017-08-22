@@ -7,7 +7,7 @@ jobs:
   build:
     working_directory: /reedflinch.io
     docker:
-      - image: reedflinch/hugo
+      - image: reedflinch/hugo:0.27
 
     steps:
       - checkout
