@@ -33,7 +33,7 @@ variable "bucket_name" {
   default     = "reedflinch-io"
 }
 
-// data "aws_acm_certificate" "web" {
-//   domain   = "${var.domain}"
-//   statuses = ["ISSUED", "PENDING_VALIDATION"]
-// }
+data "aws_acm_certificate" "web" {
+  domain   = "${var.domain}"
+  statuses = ["ISSUED", "PENDING_VALIDATION"]
+}

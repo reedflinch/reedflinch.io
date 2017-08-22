@@ -1,8 +1,3 @@
-data "aws_acm_certificate" "web" {
-  domain   = "${var.domain}"
-  statuses = ["ISSUED", "PENDING_VALIDATION"]
-}
-
 resource "aws_s3_bucket" "web" {
   bucket = "${var.bucket_name}"
   acl    = "private"
