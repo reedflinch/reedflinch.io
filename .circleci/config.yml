@@ -7,14 +7,16 @@ jobs:
   build:
     working_directory: /reedflinch.io
     docker:
-      - image: reedflinch/hugo
+      - image: reedflinch/hugo:0.27
 
     steps:
       - checkout
 
       - run:
           name: Build
-          command: hugo -v
+          command: |
+            mkdir -p content
+            hugo -v
 
 # Workflows reference:
 # https://circleci.com/docs/2.0/workflows/
