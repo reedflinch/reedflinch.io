@@ -17,8 +17,8 @@ variable "region" {
 }
 
 provider "aws" {
-  region                  = "${var.region}"
-  allowed_account_ids     = [143994185263]
+  region              = "${var.region}"
+  allowed_account_ids = [143994185263]
 }
 
 variable "domain" {
