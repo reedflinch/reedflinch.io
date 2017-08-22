@@ -14,7 +14,9 @@ jobs:
 
       - run:
           name: Build
-          command: hugo -v
+          command: |
+            mkdir -p content
+            hugo -v
 
 # Workflows reference:
 # https://circleci.com/docs/2.0/workflows/
