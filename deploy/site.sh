@@ -11,5 +11,7 @@ aws s3 sync \
 s3://reedflinch-io \
 --exclude "*" \
 --include "index.html" \
+--exclude "keybase.txt" \
 --cache-control "no-cache" \
+--delete \
 --sse
