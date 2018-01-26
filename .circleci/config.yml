@@ -42,7 +42,7 @@ jobs:
       - checkout
 
       - attach_workspace:
-          at: /reedflinch.io/public
+          at: /reedflinch.io
 
       - run:
           name: S3
