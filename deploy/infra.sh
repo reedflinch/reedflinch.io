@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd infra || true
+
 terraform init
 terraform get
 terraform fmt
