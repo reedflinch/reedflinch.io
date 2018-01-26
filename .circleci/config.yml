@@ -59,9 +59,9 @@ workflows:
       - infra:
           requires:
             - build
-      #     filters:
-      #       branches:
-      #         only: master
+          filters:
+            branches:
+              only: master
       - deploy:
           requires:
             - build
