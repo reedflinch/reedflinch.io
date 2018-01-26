@@ -1,7 +1,8 @@
 terraform {
-  required_version = ">= 0.9.1"
+  required_version = ">= 0.11.2"
 
   backend "s3" {
+    profile        = "x-personal"
     bucket         = "terraform-remote-state-reedflinch-io"
     key            = "terraform.tfstate"
     region         = "us-east-1"
@@ -17,8 +18,9 @@ variable "region" {
 }
 
 provider "aws" {
-  region              = "${var.region}"
+  profile             = "x-personal"
   allowed_account_ids = [143994185263]
+  region              = "${var.region}"
 }
 
 variable "domain" {
