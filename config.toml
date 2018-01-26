@@ -8,7 +8,7 @@ disableKinds = ["RSS"]
 
 [params]
   name = "Steve Flinchbaugh"
-  about = "Software Engineer &nbsp;&bull;&nbsp; Brooklyn &nbsp;&bull;&nbsp; Wrangling sloths in The Cloud"
+  about = "Software Engineer &nbsp;&bull;&nbsp; Brooklyn &nbsp;&bull;&nbsp; Wrangling Sloths in The Cloud"
   copyright = "2018 Steven Flinchbaugh"
   bg_scroll = "false"
   favicon = "favicon.ico"
