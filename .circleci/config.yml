@@ -14,7 +14,39 @@ jobs:
 
       - run:
           name: Build
-          command: hugo -v
+          command: HUGO_ENV=production hugo -v
+
+      - persist_to_workspace:
+          root: /reedflinch.io
+          paths:
+            - public/*
+
+  # infra:
+  #   working_directory: /reedflinch.io/infra
+  #   docker:
+  #     - image: reedflinch/terraform:0.10.2
+  #
+  #   steps:
+  #     - checkout
+  #
+  #     - run:
+  #         name: Terraform
+  #         command: ./deploy/infra.sh
+
+  deploy:
+    working_directory: /reedflinch.io
+    docker:
+      - image: reedflinch/terraform:0.10.2
+
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: /reedflinch.io/public
+
+      - run:
+          name: S3
+          command: ./deploy/site.sh
 
 # Workflows reference:
 # https://circleci.com/docs/2.0/workflows/
@@ -23,3 +55,16 @@ workflows:
   build:
     jobs:
       - build
+      # - infra:
+      #     requires:
+      #       - build
+      #     filters:
+      #       branches:
+      #         only: master
+      - deploy:
+          requires:
+            - build
+          #   - infra
+          # filters:
+          #   branches:
+          #     only: master
