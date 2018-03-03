@@ -16,6 +16,8 @@ s3://reedflinch-io \
 --sse
 
 # Break the CDN cache
+aws configure set preview.cloudfront true
+
 CF_ID=$(aws cloudfront list-distributions \
 --query "DistributionList.Items[].Id[]" \
 --output text)
