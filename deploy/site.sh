@@ -12,6 +12,14 @@ s3://reedflinch-io \
 --exclude "*" \
 --include "index.html" \
 --exclude "keybase.txt" \
---cache-control "no-cache" \
 --delete \
 --sse
+
+# Break the CDN cache
+CF_ID=$(aws cloudfront list-distributions \
+--query "DistributionList.Items[].Id[]" \
+--output text)
+
+aws cloudfront create-invalidation \
+--distribution-id ${CF_ID} \
+--paths /index.html
